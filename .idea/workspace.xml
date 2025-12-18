@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10c490aa-6ec9-4058-bc7a-07da48df0f40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/ui/wheel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/hooks/redux-hooks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/redux-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/slices/participant-slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/store/participant-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/types/participant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/base/tabbed-layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/base/timer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/widgets/picker-tab.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/widgets/settings-tab.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/persian-utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/random-utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/wheel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/base/wheel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +37,9 @@
         <option value="com.intellij.reactbuddy.index" />
         <option value="com.intellij.reactbuddy.useInitial" />
         <option value="com.intellij.reactbuddy.README" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -70,6 +85,13 @@
         <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/lib/store" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/app/ui/base" />
+    </key>
   </component>
   <component name="RunManager" selected="Shell Script.Unnamed">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
