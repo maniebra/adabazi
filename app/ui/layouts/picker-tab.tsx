@@ -11,7 +11,7 @@ export default function PickerTab() {
     );
 
     return (
-        <div title="بازی!">
+        <div title="بازی!" className="flex flex-col justify-center">
             <div className="flex w-full justify-evenly">
                 {singleGuesser && (
                     <Wheel buttonText="حدس می‌زنه!" role="guesser"/>
@@ -20,7 +20,7 @@ export default function PickerTab() {
                 <Wheel buttonText="بازی می‌کنه!" role="actor"/>
             </div>
 
-            <div className="mt-4 flex flex-row gap-8">
+            <div className="mt-4 flex flex-row gap-8 w-full justify-evenly">
                 <WordPickerWidget />
                 <GuessResultWidget />
             </div>
