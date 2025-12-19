@@ -2,9 +2,9 @@
 
 
 
-import UploadParticipantsButton from "@/app/ui/base/upload-participants-button";
-import UploadWordsButton from "@/app/ui/base/upload-words-button";
-import GameConfigForm from "@/app/ui/widgets/config-settings";
+import UploadParticipantsButton from "@/app/ui/sections/upload-participants-button";
+import UploadWordsButton from "@/app/ui/sections/upload-words-button";
+import GameConfigForm from "@/app/ui/sections/config-settings";
 
 export default function SettingsTab() {
     return (

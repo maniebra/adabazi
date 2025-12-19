@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import {useAppDispatch, useAppSelector} from "@/app/lib/hooks/redux-hooks";
+import {useAppDispatch, useAppSelector} from "@/app/hooks/redux-hooks";
 import {GameConfig} from "@/app/types/game-config";
-import {resetGameConfig, setGameConfig} from "@/app/lib/slices/game-config-slice";
+import {resetGameConfig, setGameConfig} from "@/app/slices/game-config-slice";
 
 
 export default function GameConfigForm() {

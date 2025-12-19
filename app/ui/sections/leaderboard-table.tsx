@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { useAppSelector } from "@/app/lib/hooks/redux-hooks";
+import { useAppSelector } from "@/app/hooks/redux-hooks";
 import { toFarsiDigits } from "@/app/utils/persian-utils";
 import clsx from "clsx";
 

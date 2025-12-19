@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { useAppDispatch } from "@/app/lib/hooks/redux-hooks";
-import {addBatch, resetParticipants} from "@/app/lib/slices/participant-slice";
+import { useAppDispatch } from "@/app/hooks/redux-hooks";
+import {addBatch, resetParticipants} from "@/app/slices/participant-slice";
 import {Participant} from "@/app/types/participant";
 
 

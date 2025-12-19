@@ -1,9 +1,9 @@
 "use client";
 
-import { useAppSelector } from "@/app/lib/hooks/redux-hooks";
-import Wheel from "@/app/ui/base/wheel"
-import WordPickerWidget from "@/app/ui/base/word-picker";
-import GuessResultWidget from "@/app/ui/base/guess-result";
+import { useAppSelector } from "@/app/hooks/redux-hooks";
+import Wheel from "@/app/ui/sections/wheel"
+import WordPickerWidget from "@/app/ui/sections/word-picker";
+import GuessResultWidget from "@/app/ui/sections/guess-result";
 
 export default function PickerTab() {
     const singleGuesser = useAppSelector(

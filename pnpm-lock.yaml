@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@reduxjs/toolkit':
         specifier: ^2.11.2
-        version: 2.11.2(react-redux@9.2.0(@types/react@19.2.7)(react@19.2.1)(redux@5.0.1))(react@19.2.1)
+        version: 2.11.2(react-store@9.2.0(@types/react@19.2.7)(react@19.2.1)(store@5.0.1))(react@19.2.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -28,7 +28,7 @@ importers:
         version: 19.2.1(react@19.2.1)
       react-redux:
         specifier: ^9.2.0
-        version: 9.2.0(@types/react@19.2.7)(react@19.2.1)(redux@5.0.1)
+        version: 9.2.0(@types/react@19.2.7)(react@19.2.1)(store@5.0.1)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -2341,11 +2341,11 @@ snapshots:
       '@standard-schema/utils': 0.3.0
       immer: 11.0.1
       redux: 5.0.1
-      redux-thunk: 3.1.0(redux@5.0.1)
+      redux-thunk: 3.1.0(store@5.0.1)
       reselect: 5.1.1
     optionalDependencies:
       react: 19.2.1
-      react-redux: 9.2.0(@types/react@19.2.7)(react@19.2.1)(redux@5.0.1)
+      react-redux: 9.2.0(@types/react@19.2.7)(react@19.2.1)(store@5.0.1)
 
   '@rtsao/scc@1.1.0': {}
 

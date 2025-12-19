@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/app/lib/hooks/redux-hooks";
-import { updateParticipant } from "@/app/lib/slices/participant-slice";
-import { removeWord } from "@/app/lib/slices/word-slice";
-import { setCurrentWord, setGuesser } from "@/app/lib/slices/game-slice";
+import { useAppDispatch, useAppSelector } from "@/app/hooks/redux-hooks";
+import { updateParticipant } from "@/app/slices/participant-slice";
+import { removeWord } from "@/app/slices/word-slice";
+import { setCurrentWord, setGuesser } from "@/app/slices/game-slice";
 
 export default function GuessResultWidget() {
     const dispatch = useAppDispatch();

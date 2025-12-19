@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toFarsiDigits } from "@/app/utils/persian-utils";
-import { useAppSelector } from "@/app/lib/hooks/redux-hooks";
+import { useAppSelector } from "@/app/hooks/redux-hooks";
 
 export default function CountdownWidget() {
     // ✅ Read config ONCE

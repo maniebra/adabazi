@@ -2,8 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { getRandomInt, getWeightedIndex } from "@/app/utils/random-utils";
-import { useAppSelector, useAppDispatch } from "@/app/lib/hooks/redux-hooks";
-import {setActor, setGuesser} from "@/app/lib/slices/game-slice";
+import { useAppSelector, useAppDispatch } from "@/app/hooks/redux-hooks";
+import {setActor, setGuesser} from "@/app/slices/game-slice";
 
 export default function WeightedWheel(props: {
     buttonText: string;

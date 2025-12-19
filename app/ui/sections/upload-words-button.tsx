@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { useAppDispatch } from "@/app/lib/hooks/redux-hooks";
+import { useAppDispatch } from "@/app/hooks/redux-hooks";
 import {
     addBatch,
     removeAll,
-} from "@/app/lib/slices/word-slice";
+} from "@/app/slices/word-slice";
 
 export default function UploadWordsButton() {
     const dispatch = useAppDispatch();

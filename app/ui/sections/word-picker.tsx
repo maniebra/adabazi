@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/app/lib/hooks/redux-hooks";
-import { setCurrentWord } from "@/app/lib/slices/game-slice";
+import { useAppDispatch, useAppSelector } from "@/app/hooks/redux-hooks";
+import { setCurrentWord } from "@/app/slices/game-slice";
 
 export default function WordPickerWidget() {
     const dispatch = useAppDispatch();

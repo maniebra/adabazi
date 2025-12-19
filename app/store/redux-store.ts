@@ -1,8 +1,8 @@
 import {configureStore} from "@reduxjs/toolkit";
-import participantsReducer from "@/app/lib/slices/participant-slice";
-import gameConfigReducer from "@/app/lib/slices/game-config-slice";
-import wordReducer from "@/app/lib/slices/word-slice";
-import gameReducer from "@/app/lib/slices/game-slice";
+import participantsReducer from "@/app/slices/participant-slice";
+import gameConfigReducer from "@/app/slices/game-config-slice";
+import wordReducer from "@/app/slices/word-slice";
+import gameReducer from "@/app/slices/game-slice";
 
 export const store = configureStore({
     reducer: {

@@ -1,8 +1,8 @@
 import TabbedLayout from "@/app/ui/base/tabbed-layout";
-import PickerTab from "@/app/ui/widgets/picker-tab";
-import SettingsTab from "@/app/ui/widgets/settings-tab";
+import PickerTab from "@/app/ui/layouts/picker-tab";
+import SettingsTab from "@/app/ui/layouts/settings-tab";
 import Timer from "@/app/ui/base/timer";
-import LeaderboardTable from "@/app/ui/base/leaderboard-table";
+import LeaderboardTable from "@/app/ui/sections/leaderboard-table";
 
 
 export default function Home() {
