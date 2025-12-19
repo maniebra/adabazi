@@ -67,7 +67,7 @@ export default function TabbedLayout({ children, titles }: TabbedLayoutProps) {
 
             {/* Content Area */}
             <div className="relative flex-1 min-h-0 p-6">
-                <div className="h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
+                <div className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={active}
