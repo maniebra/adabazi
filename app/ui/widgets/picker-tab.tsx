@@ -1,15 +1,27 @@
-"use client"
+"use client";
 
-import Wheel from "@/app/ui/base/wheel";
-import {useAppDispatch} from "@/app/lib/hooks/redux-hooks";
-import {useEffect} from "react";
-import {addBatch} from "@/app/lib/slices/participant-slice";
+import { useAppSelector } from "@/app/lib/hooks/redux-hooks";
+import Wheel from "@/app/ui/base/wheel"
+import WordPickerWidget from "@/app/ui/base/word-picker";
 
 export default function PickerTab() {
-    return <div title="بازی!">
-        <div className="flex flex-dir w-full justify-evenly">
-            <Wheel buttonText="حدس میزنه!"></Wheel>
-            <Wheel buttonText="بازی می‌کنه!"></Wheel>
+    const singleGuesser = useAppSelector(
+        state => state.gameConfig.single_guesser
+    );
+
+    return (
+        <div title="بازی!">
+            <div className="flex w-full justify-evenly">
+                {singleGuesser && (
+                    <Wheel buttonText="حدس می‌زنه!" />
+                )}
+
+                <Wheel buttonText="بازی می‌کنه!" />
+            </div>
+
+            <div className="mt-4">
+                <WordPickerWidget />
+            </div>
         </div>
-    </div>
+    );
 }
