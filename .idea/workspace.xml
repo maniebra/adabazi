@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10c490aa-6ec9-4058-bc7a-07da48df0f40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/lib/slices/game-slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/base/guess-result.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/base/wheel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/base/wheel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/base/word-picker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/base/word-picker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/widgets/picker-tab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/widgets/picker-tab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/base/guess-result.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/base/guess-result.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
