@@ -22,7 +22,6 @@ export default function WordPickerWidget() {
 
     return (
         <div className="w-full max-w-md rounded-2xl bg-white border border-zinc-200 p-4 space-y-4">
-            {/* Word container */}
             <div
                 className={`h-24 flex items-center justify-center rounded-xl border text-xl font-bold transition-all
           ${revealed ? "blur-0" : "blur-md select-none"}
@@ -31,7 +30,6 @@ export default function WordPickerWidget() {
                 {currentWord ?? "—"}
             </div>
 
-            {/* Controls */}
             <div className="flex gap-2">
                 <button
                     onClick={pickWord}

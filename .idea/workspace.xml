@@ -101,10 +101,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/ui/sections" />
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/lib/redux" />
       <recent name="$PROJECT_DIR$/app/lib/store" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/app/ui/base" />
     </key>
   </component>
   <component name="RunManager" selected="Shell Script.Unnamed">

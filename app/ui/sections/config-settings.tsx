@@ -27,7 +27,6 @@ export default function GameConfigForm() {
                 dispatch(setGameConfig(draft));
             }}
         >
-            {/* Single guesser */}
             <label className="flex items-center justify-between text-sm">
                 <span>حدس‌زننده تکی</span>
                 <input
@@ -37,7 +36,6 @@ export default function GameConfigForm() {
                 />
             </label>
 
-            {/* Time to guess */}
             <label className="flex flex-col text-sm gap-1">
                 <span>زمان حدس (دقیقه)</span>
                 <input
@@ -51,7 +49,6 @@ export default function GameConfigForm() {
                 />
             </label>
 
-            {/* Score to actor */}
             <label className="flex flex-col text-sm gap-1">
                 <span>امتیاز بازی‌کننده</span>
                 <input
@@ -65,7 +62,6 @@ export default function GameConfigForm() {
                 />
             </label>
 
-            {/* Score to guesser */}
             <label className="flex flex-col text-sm gap-1">
                 <span>امتیاز حدس‌زننده</span>
                 <input
@@ -79,7 +75,6 @@ export default function GameConfigForm() {
                 />
             </label>
 
-            {/* Actions */}
             <div className="flex gap-2 pt-2">
                 <button
                     type="submit"

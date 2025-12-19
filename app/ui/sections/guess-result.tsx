@@ -60,19 +60,16 @@ export default function GuessResultWidget() {
     const onGuessed = () => {
         if (!actor || !currentWord) return;
 
-        // 🚫 no guesser score → no modal, ever
         if (score_to_guesser === 0) {
             resolveRound(null);
             return;
         }
 
-        // 👤 manual guesser selection mode
         if (!singleGuesser) {
             setModalOpen(true);
             return;
         }
 
-        // 🎯 single guesser mode
         resolveRound(guesser);
     };
 

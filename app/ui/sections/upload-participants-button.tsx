@@ -54,7 +54,7 @@ export default function UploadParticipantsButton() {
                 onChange={(e) => {
                     const file = e.target.files?.[0];
                     if (file) handleFile(file);
-                    e.currentTarget.value = ""; // allow re-uploading same file
+                    e.currentTarget.value = "";
                 }}
             />
         </div>
