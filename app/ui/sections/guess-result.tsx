@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/app/hooks/redux-hooks";
-import { updateParticipant } from "@/app/slices/participant-slice";
-import { removeWord } from "@/app/slices/word-slice";
-import { setCurrentWord, setGuesser } from "@/app/slices/game-slice";
+import {useState} from "react";
+import {useAppDispatch, useAppSelector} from "@/app/hooks/redux-hooks";
+import {updateParticipant} from "@/app/slices/participant-slice";
+import {removeWord} from "@/app/slices/word-slice";
+import {setCurrentWord, setGuesser} from "@/app/slices/game-slice";
 
 export default function GuessResultWidget() {
     const dispatch = useAppDispatch();
@@ -13,9 +13,9 @@ export default function GuessResultWidget() {
     const guesser = useAppSelector(state => state.game.guesser);
     const currentWord = useAppSelector(state => state.game.currentWord);
     const singleGuesser = useAppSelector(
-        state => state.gameConfig.single_guesser
+        state => state.gameConfig.singleGuesser
     );
-    const { score_to_actor, score_to_guesser } =
+    const {scoreToActor, scoreToGuesser} =
         useAppSelector(state => state.gameConfig);
     const participants = useAppSelector(state => state.participants.list);
 
@@ -30,7 +30,7 @@ export default function GuessResultWidget() {
         dispatch(
             updateParticipant({
                 name,
-                patch: { score: p.score + delta },
+                patch: {score: p.score + delta},
             })
         );
     };
@@ -44,10 +44,10 @@ export default function GuessResultWidget() {
     const resolveRound = (finalGuesser: string | null) => {
         if (!actor || !currentWord) return;
 
-        applyScore(actor, score_to_actor);
+        applyScore(actor, scoreToActor);
 
-        if (finalGuesser && score_to_guesser > 0) {
-            applyScore(finalGuesser, score_to_guesser);
+        if (finalGuesser && scoreToGuesser > 0) {
+            applyScore(finalGuesser, scoreToGuesser);
             dispatch(setGuesser(finalGuesser));
         }
 
@@ -60,7 +60,7 @@ export default function GuessResultWidget() {
     const onGuessed = () => {
         if (!actor || !currentWord) return;
 
-        if (score_to_guesser === 0) {
+        if (scoreToGuesser === 0) {
             resolveRound(null);
             return;
         }

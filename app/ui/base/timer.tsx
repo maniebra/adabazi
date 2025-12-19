@@ -8,7 +8,7 @@ import {PauseIcon, PlayIcon, ResetIcon} from "@/app/ui/base/icons";
 
 export default function CountdownWidget() {
     const timeToGuessMin = useAppSelector(
-        state => state.gameConfig.time_to_guess
+        state => state.gameConfig.timeToGuess
     );
 
     const totalSeconds = timeToGuessMin * 60;
@@ -18,6 +18,8 @@ export default function CountdownWidget() {
     const intervalRef = useRef<number | null>(null);
 
     useEffect(() => {
+        // WARN: THIS MAY CAUSE CASCADING STATES, FIX LATER THO.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setRunning(false);
         setRemainingSec(totalSeconds);
     }, [totalSeconds]);

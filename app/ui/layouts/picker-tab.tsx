@@ -7,7 +7,7 @@ import GuessResultWidget from "@/app/ui/sections/guess-result";
 
 export default function PickerTab() {
     const singleGuesser = useAppSelector(
-        state => state.gameConfig.single_guesser
+        state => state.gameConfig.singleGuesser
     );
 
     return (
