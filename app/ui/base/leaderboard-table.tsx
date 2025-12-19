@@ -66,7 +66,7 @@ export default function LeaderboardTable({ className }: LeaderboardTableProps) {
                             </div>
 
                             {/* Score Column */}
-                            <div className="text-left font-mono text-base font-black text-indigo-600">
+                            <div className="text-left text-base font-black text-indigo-600">
                                 {toFarsiDigits(p.score)}
                             </div>
                         </div>
@@ -83,7 +83,7 @@ export default function LeaderboardTable({ className }: LeaderboardTableProps) {
             {/* Optional: Simple Footer info if list is long */}
             {sorted.length > 0 && (
                 <div className="bg-slate-50 px-6 py-2 border-t border-slate-100 text-[10px] text-slate-400 text-left uppercase font-medium">
-                    Total Participants: {toFarsiDigits(sorted.length)}
+                    کل شرکت‌کنندگان: {toFarsiDigits(sorted.length)}
                 </div>
             )}
         </div>
