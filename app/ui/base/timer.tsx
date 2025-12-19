@@ -1,15 +1,14 @@
 "use client";
 
-import {useEffect, useRef, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
-import {toFarsiDigits} from "@/app/utils/persian-utils";
-import {useAppSelector} from "@/app/hooks/redux-hooks";
-import {PauseIcon, PlayIcon, ResetIcon} from "@/app/ui/base/icons";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { toFarsiDigits } from "@/app/utils/persian-utils";
+import { useAppSelector } from "@/app/hooks/redux-hooks";
+import { PauseIcon, PlayIcon, ResetIcon } from "@/app/ui/base/icons";
 
 export default function CountdownWidget() {
-    const timeToGuessMin = useAppSelector(
-        state => state.gameConfig.timeToGuess
-    );
+    const timeToGuessMin = useAppSelector(state => state.gameConfig.timeToGuess);
+    const simpleMode = useAppSelector(state => state.gameConfig.simpleMode);
 
     const totalSeconds = timeToGuessMin * 60;
 
@@ -18,8 +17,6 @@ export default function CountdownWidget() {
     const intervalRef = useRef<number | null>(null);
 
     useEffect(() => {
-        // WARN: THIS MAY CAUSE CASCADING STATES, FIX LATER THO.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setRunning(false);
         setRemainingSec(totalSeconds);
     }, [totalSeconds]);
@@ -56,28 +53,36 @@ export default function CountdownWidget() {
     return (
         <div className="flex items-center justify-center p-6">
             <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-slate-200">
-
                 <div className="flex flex-col items-center justify-between gap-6 py-6 px-6 sm:flex-row">
-                    {/* Time Display */}
-                    <div className="flex flex-col items-center sm:items-start">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-              زمان باقی‌مانده
-            </span>
-                        <span className="text-3xl font-black text-slate-800 tabular-nums">
-              {toFarsiDigits(minutes)}:
+                    <div className={`flex flex-col ${simpleMode ? "items-center w-full" : "items-center sm:items-start"}`}>
+                        {!simpleMode && (
+                            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                                زمان باقی‌مانده
+                            </span>
+                        )}
+                        <motion.span
+                            key={remainingSec}
+                            animate={simpleMode ? { scale: [1, 1.05, 1] } : {}}
+                            transition={{ duration: 0.6 }}
+                            className={`font-black tabular-nums text-slate-900 ${
+                                simpleMode
+                                    ? "text-7xl sm:text-8xl tracking-tight"
+                                    : "text-3xl sm:text-5xl"
+                            }`}
+                        >
+                            {toFarsiDigits(minutes)}:
                             {toFarsiDigits(seconds.toString().padStart(2, "0"))}
-            </span>
+                        </motion.span>
                     </div>
 
-                    {/* Controls */}
                     <div className="flex items-center gap-2">
                         <AnimatePresence mode="wait">
                             {!running ? (
                                 <motion.button
                                     key="start"
-                                    initial={{opacity: 0, y: 5}}
-                                    animate={{opacity: 1, y: 0}}
-                                    exit={{opacity: 0, y: -5}}
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -5 }}
                                     onClick={() => {
                                         if (remainingSec === 0) {
                                             setRemainingSec(totalSeconds);
@@ -86,18 +91,18 @@ export default function CountdownWidget() {
                                     }}
                                     className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-900 active:scale-95"
                                 >
-                                    <PlayIcon/> شروع
+                                    <PlayIcon /> شروع
                                 </motion.button>
                             ) : (
                                 <motion.button
                                     key="stop"
-                                    initial={{opacity: 0, y: 5}}
-                                    animate={{opacity: 1, y: 0}}
-                                    exit={{opacity: 0, y: -5}}
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -5 }}
                                     onClick={() => setRunning(false)}
                                     className="flex items-center gap-2 rounded-xl bg-rose-50 px-5 py-2.5 text-sm font-bold text-orange-600 hover:bg-rose-100 active:scale-95"
                                 >
-                                    <PauseIcon/> توقف
+                                    <PauseIcon /> توقف
                                 </motion.button>
                             )}
                         </AnimatePresence>
@@ -110,15 +115,15 @@ export default function CountdownWidget() {
                             className="rounded-xl bg-slate-100 p-2.5 text-slate-500 hover:bg-slate-200"
                             title="بازنشانی"
                         >
-                            <ResetIcon/>
+                            <ResetIcon />
                         </button>
                     </div>
                 </div>
 
                 <div className="h-1.5 w-full bg-slate-100">
                     <motion.div
-                        animate={{width: `${percentage}%`}}
-                        transition={{duration: 1, ease: "linear"}}
+                        animate={{ width: `${percentage}%` }}
+                        transition={{ duration: 1, ease: "linear" }}
                         className="h-full bg-blue-500"
                     />
                 </div>

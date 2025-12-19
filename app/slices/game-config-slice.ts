@@ -6,6 +6,7 @@ const initialState: GameConfig = {
     timeToGuess: 1,
     scoreToActor: 5,
     scoreToGuesser: 5,
+    simpleMode: true
 };
 
 const gameConfigSlice = createSlice({

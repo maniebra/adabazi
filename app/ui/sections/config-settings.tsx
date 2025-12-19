@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {useState} from "react";
 import {useAppDispatch, useAppSelector} from "@/app/hooks/redux-hooks";
 import {GameConfig} from "@/app/types/game-config";
 import {resetGameConfig, setGameConfig} from "@/app/slices/game-config-slice";
@@ -16,12 +16,12 @@ export default function GameConfigForm() {
         key: K,
         value: GameConfig[K]
     ) => {
-        setDraft(prev => ({ ...prev, [key]: value }));
+        setDraft(prev => ({...prev, [key]: value}));
     };
 
     return (
         <form
-            className="w-full rounded-2xl bg-white border-1 border-zinc-200 p-4 space-y-4"
+            className="w-full rounded-2xl bg-white border-1 border-zinc-200 p-4 space-y-4 overflow-y-auto"
             onSubmit={(e) => {
                 e.preventDefault();
                 dispatch(setGameConfig(draft));
@@ -75,6 +75,15 @@ export default function GameConfigForm() {
                 />
             </label>
 
+            <label className="flex items-center justify-between text-sm">
+                <span>حالت ساده</span>
+                <input
+                    type="checkbox"
+                    checked={draft.simpleMode}
+                    onChange={(e) => update("simpleMode", e.target.checked)}
+                />
+            </label>
+
             <div className="flex gap-2 pt-2">
                 <button
                     type="submit"
@@ -93,6 +102,7 @@ export default function GameConfigForm() {
                             timeToGuess: 1,
                             scoreToActor: 5,
                             scoreToGuesser: 5,
+                            simpleMode: true,
                         });
                     }}
                 >

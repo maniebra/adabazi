@@ -3,4 +3,5 @@ export interface GameConfig {
     timeToGuess: number;
     scoreToActor: number;
     scoreToGuesser: number;
+    simpleMode: boolean;
 }
