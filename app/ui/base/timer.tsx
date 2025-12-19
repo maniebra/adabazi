@@ -52,11 +52,11 @@ export default function CountdownWidget() {
 
     return (
         <div className="flex items-center justify-center p-6">
-            <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-slate-200">
-                <div className="flex flex-col items-center justify-between gap-6 py-6 px-6 sm:flex-row">
+            <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-900/70 backdrop-blur-md shadow-2xl shadow-black/40 ring-1 ring-zinc-800">
+                <div className="flex flex-col items-center justify-between gap-6 px-6 py-6 sm:flex-row">
                     <div className={`flex flex-col ${simpleMode ? "items-center w-full" : "items-center sm:items-start"}`}>
                         {!simpleMode && (
-                            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
                                 زمان باقی‌مانده
                             </span>
                         )}
@@ -64,7 +64,11 @@ export default function CountdownWidget() {
                             key={remainingSec}
                             animate={simpleMode ? { scale: [1, 1.05, 1] } : {}}
                             transition={{ duration: 0.6 }}
-                            className={`font-black tabular-nums text-slate-900 ${
+                            className={`font-black tabular-nums ${
+                                remainingSec <= 10
+                                    ? "text-red-400"
+                                    : "text-emerald-300"
+                            } ${
                                 simpleMode
                                     ? "text-7xl sm:text-8xl tracking-tight"
                                     : "text-3xl sm:text-5xl"
@@ -89,7 +93,7 @@ export default function CountdownWidget() {
                                         }
                                         setRunning(true);
                                     }}
-                                    className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-900 active:scale-95"
+                                    className="flex items-center gap-2 rounded-xl bg-emerald-600/80 px-5 py-2.5 text-sm font-bold text-zinc-950 hover:bg-emerald-500 active:scale-95"
                                 >
                                     <PlayIcon /> شروع
                                 </motion.button>
@@ -100,7 +104,7 @@ export default function CountdownWidget() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -5 }}
                                     onClick={() => setRunning(false)}
-                                    className="flex items-center gap-2 rounded-xl bg-rose-50 px-5 py-2.5 text-sm font-bold text-orange-600 hover:bg-rose-100 active:scale-95"
+                                    className="flex items-center gap-2 rounded-xl bg-red-500/15 px-5 py-2.5 text-sm font-bold text-red-300 hover:bg-red-500/25 active:scale-95"
                                 >
                                     <PauseIcon /> توقف
                                 </motion.button>
@@ -112,7 +116,7 @@ export default function CountdownWidget() {
                                 setRunning(false);
                                 setRemainingSec(totalSeconds);
                             }}
-                            className="rounded-xl bg-slate-100 p-2.5 text-slate-500 hover:bg-slate-200"
+                            className="rounded-xl bg-zinc-800/80 p-2.5 text-zinc-400 hover:bg-zinc-700"
                             title="بازنشانی"
                         >
                             <ResetIcon />
@@ -120,11 +124,15 @@ export default function CountdownWidget() {
                     </div>
                 </div>
 
-                <div className="h-1.5 w-full bg-slate-100">
+                <div className="h-1.5 w-full bg-zinc-800">
                     <motion.div
                         animate={{ width: `${percentage}%` }}
                         transition={{ duration: 1, ease: "linear" }}
-                        className="h-full bg-blue-500"
+                        className={`h-full ${
+                            remainingSec <= 10
+                                ? "bg-red-500"
+                                : "bg-emerald-500"
+                        }`}
                     />
                 </div>
             </div>

@@ -2,10 +2,7 @@
 
 import { useRef } from "react";
 import { useAppDispatch } from "@/app/hooks/redux-hooks";
-import {
-    addBatch,
-    removeAll,
-} from "@/app/slices/word-slice";
+import { addBatch, removeAll } from "@/app/slices/word-slice";
 
 export default function UploadWordsButton() {
     const dispatch = useAppDispatch();
@@ -24,14 +21,17 @@ export default function UploadWordsButton() {
     };
 
     return (
-        <div className="border-1 border-zinc-200 h-40 p-4 rounded-2xl relative">
-            <h1 className="text-2xl font-bold pb-4">محل بارگذاری فایل کلمات</h1>
-            <p>
+        <div className="relative h-40 rounded-2xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-md p-4 text-zinc-100 shadow-2xl shadow-black/40">
+            <h1 className="pb-4 text-2xl font-bold text-emerald-300">
+                محل بارگذاری فایل کلمات
+            </h1>
+            <p className="text-sm text-zinc-400">
                 فایل کلمات خود را با فرمت .txt در اینجا بارگذاری نمایید
             </p>
+
             <button
                 onClick={() => inputRef.current?.click()}
-                className="rounded-xl bg-blue-700 px-4 py-2  text-white hover:bg-blue-600 active:scale-95 absolute bottom-4 left-4"
+                className="absolute bottom-4 left-4 rounded-xl bg-red-500/80 px-4 py-2 text-sm font-bold text-zinc-950 hover:bg-red-500 active:scale-95"
             >
                 بارگذاری
             </button>

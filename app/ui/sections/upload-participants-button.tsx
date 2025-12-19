@@ -2,9 +2,8 @@
 
 import { useRef } from "react";
 import { useAppDispatch } from "@/app/hooks/redux-hooks";
-import {addBatch, resetParticipants} from "@/app/slices/participant-slice";
-import {Participant} from "@/app/types/participant";
-
+import { addBatch, resetParticipants } from "@/app/slices/participant-slice";
+import { Participant } from "@/app/types/participant";
 
 export default function UploadParticipantsButton() {
     const dispatch = useAppDispatch();
@@ -36,12 +35,17 @@ export default function UploadParticipantsButton() {
     };
 
     return (
-        <div className="border-1 border-zinc-200 h-40 rounded-xl relative p-4">
-            <h1 className="text-2xl font-bold pb-4">محل بارگذاری فایل شرکت‌کنندگان</h1>
-            <p>فایل txt شرکت‌کنندگان مسابقه را در اینجا بارگذاری نمایید.</p>
+        <div className="relative h-40 rounded-xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-md p-4 text-zinc-100 shadow-2xl shadow-black/40">
+            <h1 className="pb-4 text-2xl font-bold text-emerald-300">
+                محل بارگذاری فایل شرکت‌کنندگان
+            </h1>
+            <p className="text-sm text-zinc-400">
+                فایل txt شرکت‌کنندگان مسابقه را در اینجا بارگذاری نمایید.
+            </p>
+
             <button
                 onClick={() => inputRef.current?.click()}
-                className="px-4 py-2 rounded-xl bg-blue-700 text-white absolute bottom-4 left-4"
+                className="absolute bottom-4 left-4 rounded-xl bg-red-500/80 px-4 py-2 text-sm font-bold text-zinc-950 hover:bg-red-500 active:scale-95"
             >
                 بارگذاری
             </button>

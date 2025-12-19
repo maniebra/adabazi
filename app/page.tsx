@@ -8,7 +8,7 @@ import LeaderboardTable from "@/app/ui/sections/leaderboard-table";
 import {useAppSelector} from "@/app/hooks/redux-hooks";
 
 function SimpleMode() {
-    return  <main className="h-[100vh] w-full bg-slate-50">
+    return  <main className="h-[100vh] w-full ">
         <section className="w-full h-2/3">
             <TabbedLayout titles={["بازی!", "تنظیمات"]}>
                 <PickerTab/>
@@ -22,7 +22,7 @@ function SimpleMode() {
 }
 
 function AdvancedMode() {
-    return <main className="h-[100vh] w-full flex flex-row  bg-slate-50">
+    return <main className="h-[100vh] w-full flex flex-row  ">
         <section className="w-2/3 h-full">
             <TabbedLayout titles={["بازی!", "تنظیمات"]}>
                 <PickerTab/>

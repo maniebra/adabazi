@@ -75,8 +75,8 @@
 
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: var(--color-zinc-900);
+    --foreground: #ffffff;
     font-family: "IRANSansX", system-ui, sans-serif;
 }
 
@@ -89,7 +89,9 @@
 }
 
 body {
-    background: var(--background);
+    background-image: url("/background.png");
+    background-repeat: repeat;
+    background-size: 36rem;
     color: var(--foreground);
     font-family: IRANSansX, Helvetica, sans-serif;
 }
