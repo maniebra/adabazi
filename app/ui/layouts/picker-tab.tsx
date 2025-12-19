@@ -11,7 +11,7 @@ export default function PickerTab() {
     );
 
     return (
-        <div title="بازی!" className="flex flex-col justify-center">
+        <div title="بازی!">
             <div className="flex w-full justify-evenly">
                 {singleGuesser && (
                     <Wheel buttonText="حدس می‌زنه!" role="guesser"/>
