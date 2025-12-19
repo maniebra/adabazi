@@ -31,8 +31,8 @@ export default function GameConfigForm() {
                 <span>حدس‌زننده تکی</span>
                 <input
                     type="checkbox"
-                    checked={draft.single_guesser}
-                    onChange={(e) => update("single_guesser", e.target.checked)}
+                    checked={draft.singleGuesser}
+                    onChange={(e) => update("singleGuesser", e.target.checked)}
                 />
             </label>
 
@@ -41,9 +41,9 @@ export default function GameConfigForm() {
                 <input
                     type="number"
                     min={1}
-                    value={draft.time_to_guess}
+                    value={draft.timeToGuess}
                     onChange={(e) =>
-                        update("time_to_guess", Number(e.target.value))
+                        update("timeToGuess", Number(e.target.value))
                     }
                     className="rounded-lg border px-3 py-1.5"
                 />
@@ -54,9 +54,9 @@ export default function GameConfigForm() {
                 <input
                     type="number"
                     min={0}
-                    value={draft.score_to_actor}
+                    value={draft.scoreToActor}
                     onChange={(e) =>
-                        update("score_to_actor", Number(e.target.value))
+                        update("scoreToActor", Number(e.target.value))
                     }
                     className="rounded-lg border px-3 py-1.5"
                 />
@@ -67,9 +67,9 @@ export default function GameConfigForm() {
                 <input
                     type="number"
                     min={0}
-                    value={draft.score_to_guesser}
+                    value={draft.scoreToGuesser}
                     onChange={(e) =>
-                        update("score_to_guesser", Number(e.target.value))
+                        update("scoreToGuesser", Number(e.target.value))
                     }
                     className="rounded-lg border px-3 py-1.5"
                 />
@@ -89,10 +89,10 @@ export default function GameConfigForm() {
                     onClick={() => {
                         dispatch(resetGameConfig());
                         setDraft({
-                            single_guesser: false,
-                            time_to_guess: 1,
-                            score_to_actor: 5,
-                            score_to_guesser: 5,
+                            singleGuesser: false,
+                            timeToGuess: 1,
+                            scoreToActor: 5,
+                            scoreToGuesser: 5,
                         });
                     }}
                 >

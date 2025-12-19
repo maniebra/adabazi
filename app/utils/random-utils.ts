@@ -3,13 +3,11 @@ export function getRandomInt(min: number, max: number) {
 }
 
 export function getWeightedIndex(weights: number[]): number {
-    // If all weights are 0, return random index
     const totalWeight = weights.reduce((sum, w) => sum + w, 0);
     if (totalWeight === 0) {
         return Math.floor(Math.random() * weights.length);
     }
 
-    // Weighted random selection
     const random = Math.random() * totalWeight;
     let sum = 0;
 
