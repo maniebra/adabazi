@@ -10,11 +10,12 @@ interface LeaderboardTableProps {
 }
 
 export default function LeaderboardTable({ className }: LeaderboardTableProps) {
-    const participants = useAppSelector((state) => state.participants.list);
+    const sorted = useAppSelector(state =>
+        [...state.participants.list]
+            .map(p => ({ ...p }))
+            .sort((a, b) => b.score - a.score)
+    );
 
-    const sorted = useMemo(() => {
-        return [...participants].sort((a, b) => b.score - a.score);
-    }, [participants]);
 
     return (
         <div
